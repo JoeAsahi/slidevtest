@@ -1,1 +1,3 @@
 # slidevtest
+
+1つのGithub Actionsで複数のslidevをデプロイできるかのテスト
