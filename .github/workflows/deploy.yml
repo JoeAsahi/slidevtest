@@ -8,17 +8,17 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '16'
-      - name: Install dependencies
-        run: npm install
+      # - name: Install dependencies
+      #   run: npm install
       - name: Install slidev
         run:  npm i -g @slidev/cli
-      - name: pwd
-        run: pwd
+      # - name: pwd
+      #   run: pwd
       - name: Build
-        run: slidev build --base /slidevtest/slide02/ --out dist/slide02/ --watch
+        run: slidev build --base /slidevtest/slide02/ --out ../docs/slide02/ --watch
         working-directory: ./slide01
       - name: check
-        run: ls ./slide01/dist/
+        run: tree -d
         working-directory: ./
       - name: Deploy pages
         uses: crazy-max/ghaction-github-pages@v3
