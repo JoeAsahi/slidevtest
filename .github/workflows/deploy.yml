@@ -14,7 +14,7 @@ jobs:
         shell: bash
         id: changes
         run: |
-          echo "git diff --staged --name-only ."
+          git diff --staged --name-only .
       # - name: Install dependencies
       #   run: npm install
       #   working-directory: ./slide01
