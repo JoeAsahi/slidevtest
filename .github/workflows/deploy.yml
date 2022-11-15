@@ -20,16 +20,15 @@ jobs:
         run: tree -d
         working-directory: ./
       - name: git setting
-          run: |
-            git config --local user.email "joeasahi@gmail.com"
-            git config --local user.name "JoeAsahi"
+        run: |
+          git config --local user.email "joeasahi@gmail.com"
+          git config --local user.name "JoeAsahi"
       - name: Commit files
         run: |
           git add .
           git commit -m "commit docs" -a
           git pull
           git push origin master
-              
       # - name: Deploy pages
       #   uses: crazy-max/ghaction-github-pages@v3
       #   with:
