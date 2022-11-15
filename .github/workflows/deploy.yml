@@ -15,7 +15,8 @@ jobs:
       - name: pwd
         run: pwd
       - name: Build
-        run: slidev build slide01/slides.md --base /slidevtest/slide02/ --out /home/runner/work/slidevtest/slidevtest/dist/slide02/
+        run: slidev build slide01/slides.md --base /slidevtest/slide02/ --out dist/slide02/
+        working-directory: ./
       - name: Deploy pages
         uses: crazy-max/ghaction-github-pages@v3
         with:
