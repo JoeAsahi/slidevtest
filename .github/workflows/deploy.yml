@@ -18,7 +18,7 @@ jobs:
         run: slidev build slide01/slides.md --base /slidevtest/slide02/ --out ./dist/slide02/
         working-directory: ./
       - name: check
-        run: ls ./slide01/
+        run: ls ./slide01/dist
         working-directory: ./
       - name: Deploy pages
         uses: crazy-max/ghaction-github-pages@v3
