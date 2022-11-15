@@ -25,5 +25,6 @@ jobs:
         with:
           build_dir: slide01/dist
           keep_history: true
+          verbose: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
