@@ -13,6 +13,7 @@ jobs:
       - name: check diff
         run: |
           git diff --cached .
+          ls -la
       # - name: Install dependencies
       #   run: npm install
       #   working-directory: ./slide01
