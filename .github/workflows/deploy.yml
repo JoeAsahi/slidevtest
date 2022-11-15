@@ -5,35 +5,28 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '16'
-      - name: Install slidev
-        run:  npm i -g @slidev/cli
+      # - uses: actions/setup-node@v3
+      #   with:
+      #     node-version: '16'
+      # - name: Install slidev
+      #   run:  npm i -g @slidev/cli
       - name: check diff
         shell: bash
         id: changes
         run: |
-          echo "::set-output name=count::$(git diff --staged --name-only . |wc -l)"
-      # - name: check changes
-      #   uses: dorny/paths-filter@v2
-      #   id: changes
-      #   with:
-      #     filters: |
-      #       src:
-      #         - 'slide01/**'
-      - name: Install dependencies
-        run: npm install
-        working-directory: ./slide01
-      - name: Build
-        run: slidev build --base /slidevtest/slide02/ --out ../docs/slide02/ --watch
-        working-directory: ./slide01
-      - name: git setting
-        run: |
-          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-      - name: Commit files
-        run: |
-          git add .
-          git commit -m "update docs"
-          git push
+          echo "name=count::$(git diff --staged --name-only . |wc -l)"
+      # - name: Install dependencies
+      #   run: npm install
+      #   working-directory: ./slide01
+      # - name: Build
+      #   run: slidev build --base /slidevtest/slide02/ --out ../docs/slide02/ --watch
+      #   working-directory: ./slide01
+      # - name: git setting
+      #   run: |
+      #     git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      #     git config --local user.name "github-actions[bot]"
+      # - name: Commit files
+      #   run: |
+      #     git add .
+      #     git commit -m "update docs"
+      #     git push
