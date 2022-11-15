@@ -10,6 +10,11 @@ jobs:
           node-version: '16'
       - name: Install slidev
         run:  npm i -g @slidev/cli
+        - name: check diff
+          shell: bash
+          id: changes
+          run: |
+            echo "::set-output name=count::$(git diff --staged --name-only . |wc -l)"
       - name: check changes
         uses: dorny/paths-filter@v2
         id: changes
@@ -32,11 +37,3 @@ jobs:
           git add .
           git commit -m "update docs"
           git push
-      # - name: Deploy pages
-      #   uses: crazy-max/ghaction-github-pages@v3
-      #   with:
-      #     build_dir: slide01/dist
-      #     keep_history: true
-      #     verbose: true
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
