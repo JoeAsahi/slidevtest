@@ -14,7 +14,7 @@ jobs:
         shell: bash
         id: changes
         run: |
-          echo "name=count::$(git diff --staged --name-only . |wc -l)"
+          echo "git diff --staged --name-only ."
       # - name: Install dependencies
       #   run: npm install
       #   working-directory: ./slide01
