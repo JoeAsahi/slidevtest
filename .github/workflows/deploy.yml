@@ -15,7 +15,7 @@ jobs:
       # - name: pwd
       #   run: pwd
       - name: Build
-        run: slidev build --base /slidevtest/slide02/ --out ../docs/slide02/ --watch
+        run: slidev build --yes --base /slidevtest/slide02/ --out ../docs/slide02/ --watch
         working-directory: ./slide01
       - name: check
         run: tree -d
