@@ -15,13 +15,13 @@ jobs:
         id: changes
         run: |
           echo "::set-output name=count::$(git diff --staged --name-only . |wc -l)"
-      - name: check changes
-        uses: dorny/paths-filter@v2
-        id: changes
-        with:
-          filters: |
-            src:
-              - 'slide01/**'
+      # - name: check changes
+      #   uses: dorny/paths-filter@v2
+      #   id: changes
+      #   with:
+      #     filters: |
+      #       src:
+      #         - 'slide01/**'
       - name: Install dependencies
         run: npm install
         working-directory: ./slide01
