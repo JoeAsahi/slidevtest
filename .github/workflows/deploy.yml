@@ -10,15 +10,18 @@ jobs:
           node-version: '16'
       - name: Install slidev
         run:  npm i -g @slidev/cli
+      - name: check changes
+        uses: dorny/paths-filter@v2
+        id: changes
+          filters: |
+            src:
+              - '**/**'
       - name: Install dependencies
         run: npm install
         working-directory: ./slide01
       - name: Build
         run: slidev build --base /slidevtest/slide02/ --out ../docs/slide02/ --watch
         working-directory: ./slide01
-      - name: check
-        run: tree -d
-        working-directory: ./
       - name: git setting
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
