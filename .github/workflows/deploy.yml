@@ -16,7 +16,7 @@ jobs:
         with:
           filters: |
             src:
-              - '**/**'
+              - 'slide01/**'
       - name: Install dependencies
         run: npm install
         working-directory: ./slide01
