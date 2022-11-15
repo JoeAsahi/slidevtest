@@ -10,11 +10,11 @@ jobs:
           node-version: '16'
       - name: Install slidev
         run:  npm i -g @slidev/cli
-        - name: check diff
-          shell: bash
-          id: changes
-          run: |
-            echo "::set-output name=count::$(git diff --staged --name-only . |wc -l)"
+      - name: check diff
+        shell: bash
+        id: changes
+        run: |
+          echo "::set-output name=count::$(git diff --staged --name-only . |wc -l)"
       - name: check changes
         uses: dorny/paths-filter@v2
         id: changes
