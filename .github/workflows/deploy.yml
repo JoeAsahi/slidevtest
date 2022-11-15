@@ -15,15 +15,15 @@ jobs:
       - name: pwd
         run: pwd
       - name: Build
-        run: slidev build slide01/slides.md --base /slidevtest/slide02/ --out ./dist/slide02/
-        working-directory: ./
+        run: slidev build --base /slidevtest/slide02/ --out dist/slide02/
+        working-directory: ./slide01
       - name: check
-        run: ls ./slide01/dist
+        run: ls ./slide01/dist/
         working-directory: ./
       - name: Deploy pages
         uses: crazy-max/ghaction-github-pages@v3
         with:
-          build_dir: dist
+          build_dir: slide01/dist
           keep_history: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
