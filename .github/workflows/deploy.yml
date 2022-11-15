@@ -21,14 +21,12 @@ jobs:
         working-directory: ./
       - name: git setting
         run: |
-          git config --local user.email "joeasahi@gmail.com"
-          git config --local user.name "JoeAsahi"
-      - name: Commit files
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"      - name: Commit files
         run: |
           git add .
-          git commit -m "commit docs" -a
-          git pull
-          git push origin master
+          git commit -m "update docs"
+          git push
       # - name: Deploy pages
       #   uses: crazy-max/ghaction-github-pages@v3
       #   with:
