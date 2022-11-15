@@ -11,8 +11,6 @@ jobs:
       # - name: Install slidev
       #   run:  npm i -g @slidev/cli
       - name: check diff
-        shell: bash
-        id: changes
         run: |
           git diff --cached .
       # - name: Install dependencies
