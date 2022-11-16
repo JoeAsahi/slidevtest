@@ -5,6 +5,7 @@ on:
       - '!README.md'
       - '!docs/**'
       - '!.github/**'
+      - '**/**'
 jobs:
   deploy:
     runs-on: ubuntu-latest
