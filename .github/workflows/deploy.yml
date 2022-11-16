@@ -49,6 +49,7 @@ jobs:
             ls
             npm install
             slidev build --base /slidevtest/$dir/ --out ../docs/$dir/
+            cd ..
           done
 
       # - name: Install dependencies
