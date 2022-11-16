@@ -5,11 +5,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      # - uses: actions/setup-node@v3
-      #   with:
-      #     node-version: '16'
-      # - name: Install slidev
-      #   run:  npm i -g @slidev/cli
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+      - name: Install slidev
+        run:  npm i -g @slidev/cli
       - name: check diff
         run: |
           git diff --cached .
@@ -33,14 +33,21 @@ jobs:
       - name: List Changed Directory
         run: |
           echo "MOD"
-          echo "${{ steps.changed-files.outputs.all_changed_files }}"|tr " " "\n"|grep -v "^\."|cut -d/ -f1|sort|uniq|tr "\n" " "
+          echo "${{ steps.changed-files.outputs.all_changed_files }}"|tr " " "\n"|grep -v "^\."|cut -d/ -f1|sort|uniq|tr "\n" " "|sed "s/^/DIRS=/" > $GITHUB_ENV
 
+      # echo "test .test test2/test"|tr " " "\n"|grep -v "^\."|cut -d/ -f1|sort|uniq|tr "\n" " "
+
+      - name: build
+        run: |
+          echo "DIRS"
+          echo "${{ env,DIRS }}"
       # - name: Install dependencies
       #   run: npm install
       #   working-directory: ./slide01
       # - name: Build
       #   run: slidev build --base /slidevtest/slide02/ --out ../docs/slide02/ --watch
       #   working-directory: ./slide01
+
       # - name: git setting
       #   run: |
       #     git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
