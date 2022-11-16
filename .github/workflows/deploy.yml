@@ -26,7 +26,7 @@ jobs:
           echo "ORG"
           echo "${{ steps.changed-files.outputs.all_changed_files }}"
           echo "MOD"
-          echo "${{ steps.changed-files.outputs.all_changed_files }}"|tr [:space:] "\n"|cut -d/ -f1|sort|uniq|tr "\n" " "
+          echo "${{ steps.changed-files.outputs.all_changed_files }}"|tr " " "\n"|grep -v ^\.|cut -d/ -f1|sort|uniq|tr "\n" " "
           echo "FOR"
           for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
             echo "$file"
