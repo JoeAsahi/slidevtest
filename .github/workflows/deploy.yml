@@ -24,16 +24,10 @@ jobs:
       - name: List all changed files
         run: |
           echo "${{ steps.changed-files.outputs.all_changed_files }}"
+          echo "${{ steps.changed-files.outputs.all_changed_files }}"|tr [:spaces:] "\n"|cut -d/ -f1|sort|uniq|tr "\n" " "
           for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
-            echo "$file was changed"
+            echo "$file"
           done
-
-      - name: Check for update in commit
-        id: check
-        uses: mamezou-tech/monorepo-update-checker@main
-
-      - name: Get the output result
-        run: echo "The result was ${{ toJSON(steps.check.outputs.results) }}"
 
       # - name: Install dependencies
       #   run: npm install
