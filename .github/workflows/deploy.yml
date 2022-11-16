@@ -1,5 +1,9 @@
 name: Deploy Slidev
 on: push
+  paths:
+    - '!README.md'
+    - '!docs/**'
+    - '!.github/**'
 jobs:
   deploy:
     runs-on: ubuntu-latest
