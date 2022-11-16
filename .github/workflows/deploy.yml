@@ -38,9 +38,10 @@ jobs:
           echo "[${{ env.DIRS }}]"
           echo ">FOR"
           for dir in ${{ env.DIRS }}; do
-            echo "$dir"
+            echo "[$dir]"
             cd $dir
-            ls 
+            ls
+            npm install
           done
 
       # - name: Install dependencies
