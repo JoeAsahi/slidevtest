@@ -52,12 +52,12 @@ jobs:
       #   run: slidev build --base /slidevtest/slide02/ --out ../docs/slide02/ --watch
       #   working-directory: ./slide01
 
-      # - name: git setting
-      #   run: |
-      #     git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-      #     git config --local user.name "github-actions[bot]"
-      # - name: Commit files
-      #   run: |
-      #     git add .
-      #     git commit -m "update docs"
-      #     git push
+      - name: git setting
+        run: |
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+      - name: Commit files
+        run: |
+          git add .
+          git commit -m "update docs"
+          git push
