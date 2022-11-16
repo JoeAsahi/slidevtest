@@ -5,11 +5,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      # - uses: actions/setup-node@v3
-      #   with:
-      #     node-version: '16'
-      # - name: Install slidev
-      #   run:  npm i -g @slidev/cli
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+      - name: Install slidev
+        run:  npm i -g @slidev/cli
 
       - name: Get changed files
         id: changed-files
@@ -39,6 +39,8 @@ jobs:
           echo ">FOR"
           for dir in ${{ env.DIRS }}; do
             echo "$dir"
+            cd $dir
+            ls 
           done
 
       # - name: Install dependencies
