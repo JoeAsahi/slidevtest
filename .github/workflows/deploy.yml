@@ -40,6 +40,7 @@ jobs:
           for dir in ${{ env.DIRS }}"; do
             echo "$dir"
           done
+
       # - name: Install dependencies
       #   run: npm install
       #   working-directory: ./slide01
