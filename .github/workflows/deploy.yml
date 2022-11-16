@@ -28,6 +28,13 @@ jobs:
             echo "$file was changed"
           done
 
+      - name: Check for update in commit
+        id: check
+        uses: mamezou-tech/monorepo-update-checker@main
+
+      - name: Get the output result
+        run: echo "The result was ${{ toJSON(steps.check.outputs.results) }}"
+
       # - name: Install dependencies
       #   run: npm install
       #   working-directory: ./slide01
