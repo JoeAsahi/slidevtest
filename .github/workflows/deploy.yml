@@ -21,26 +21,30 @@ jobs:
         with:
           dir_names: "true"
 
-      - name: List all changed files
-        run: |
-          echo "ORG"
-          echo "${{ steps.changed-files.outputs.all_changed_files }}"
-          echo "FOR"
-          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
-            echo "$file"
-          done
+      # - name: List all changed files
+      #   run: |
+      #     echo "ORG"
+      #     echo "${{ steps.changed-files.outputs.all_changed_files }}"
+      #     echo "FOR"
+      #     for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+      #       echo "$file"
+      #     done
 
       - name: List Changed Directory
         run: |
-          echo "MOD"
           echo "${{ steps.changed-files.outputs.all_changed_files }}"|tr " " "\n"|grep -v "^\."|cut -d/ -f1|sort|uniq|tr "\n" " "|sed "s/^/DIRS=/" > $GITHUB_ENV
 
       # echo "test .test test2/test"|tr " " "\n"|grep -v "^\."|cut -d/ -f1|sort|uniq|tr "\n" " "
 
       - name: build
         run: |
-          echo "DIRS"
+          echo ">DIRS"
           echo "${{ env.DIRS }}"
+          for dir in ${{ env.DIRS }}"; do
+            echo "$dir"
+            cd $dir
+            ls
+          done
       # - name: Install dependencies
       #   run: npm install
       #   working-directory: ./slide01
