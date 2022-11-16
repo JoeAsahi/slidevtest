@@ -24,6 +24,6 @@ src: ./subpage.md
 Page 2 from another file.
 ```
 
-test!!
+test
 
 [Learn more](https://sli.dev/guide/syntax.html#multiple-entries)
