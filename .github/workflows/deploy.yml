@@ -40,7 +40,7 @@ jobs:
       - name: build
         run: |
           echo "DIRS"
-          echo "${{ env,DIRS }}"
+          echo "${{ env.DIRS }}"
       # - name: Install dependencies
       #   run: npm install
       #   working-directory: ./slide01
