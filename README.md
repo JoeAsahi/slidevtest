@@ -18,9 +18,11 @@ git checkout main
 ```
 
 @slidev/cliをインストールするのではなく、
-初期作成時：npm init slidev
-更新時：チェックアウト直後に、そのディレクトリでnpm install
+初期作成時：`npm init slidev`
+更新時：チェックアウト直後に、そのディレクトリで`npm install`
 を実行し、
-npm run dev
+`npm run dev`
 で実行する方が良い
 ※slidev/cliだとテーマを変えた時にpackage.jsonに反映されない
+
+一度作成したスライドを削除したい場合は、docsフォルダをチェックアウトして該当フォルダを削除し、push
