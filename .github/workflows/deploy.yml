@@ -24,7 +24,7 @@ jobs:
       - name: List all changed files
         run: |
           echo "${{ steps.changed-files.outputs.all_changed_files }}"
-          echo "${{ steps.changed-files.outputs.all_changed_files }}"|tr [:spaces:] "\n"|cut -d/ -f1|sort|uniq|tr "\n" " "
+          echo "${{ steps.changed-files.outputs.all_changed_files }}"|tr [:space:] "\n"|cut -d/ -f1|sort|uniq|tr "\n" " "
           for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
             echo "$file"
           done
