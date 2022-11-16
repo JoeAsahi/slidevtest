@@ -17,14 +17,14 @@ jobs:
         with:
           dir_names: "true"
 
-      # - name: List all changed files
-      #   run: |
-      #     echo "ORG"
-      #     echo "${{ steps.changed-files.outputs.all_changed_files }}"
-      #     echo "FOR"
-      #     for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
-      #       echo "$file"
-      #     done
+      - name: List all changed files
+        run: |
+          echo "ORG"
+          echo "[${{ steps.changed-files.outputs.all_changed_files }}]"
+          echo "FOR"
+          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+            echo "$file"
+          done
 
       - name: List Changed Directory
         run: |
@@ -35,7 +35,7 @@ jobs:
       - name: build
         run: |
           echo ">DIRS"
-          echo "${{ env.DIRS }}"
+          echo "[${{ env.DIRS }}]"
           echo ">FOR"
           for dir in ${{ env.DIRS }}"; do
             echo "$dir"
