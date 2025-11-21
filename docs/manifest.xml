@@ -8,9 +8,9 @@
   <Description DefaultValue="A template to get started."/>
   <IconUrl DefaultValue="https://joeasahi.github.io/slidevtest/assets/icon-64.png"/>
   <HighResolutionIconUrl DefaultValue="https://joeasahi.github.io/slidevtest/assets/icon-128.png"/>
-  <SupportUrl DefaultValue="https://vbkyh.sharepoint.com/sites/OfficeAddins/RecipientChecker/"/>
+  <SupportUrl DefaultValue="https://joeasahi.github.io/slidevtest/"/>
   <AppDomains>
-    <AppDomain>https://vbkyh.sharepoint.com</AppDomain>
+    <AppDomain>https://joeasahi.github.io/slidevtest/</AppDomain>
   </AppDomains>
   <Hosts>
     <Host Name="Mailbox"/>
