@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides/1.0" xsi:type="MailApp">
-  <Id>5cfb0b67-79b7-49c7-95fb-9ca79f77af84</Id>
+  <Id>925ff357-0510-4edf-8cbe-19f46492c763</Id>
   <Version>1.0.0.0</Version>
-  <ProviderName>Nippan Techceed</ProviderName>
+  <ProviderName>日販テクシード</ProviderName>
   <DefaultLocale>ja-JP</DefaultLocale>
   <DisplayName DefaultValue="RecipientChecker"/>
-  <Description DefaultValue="A template to get started."/>
+  <Description DefaultValue="Office Addin Test01"/>
   <IconUrl DefaultValue="https://joeasahi.github.io/slidevtest/assets/icon-64.png"/>
   <HighResolutionIconUrl DefaultValue="https://joeasahi.github.io/slidevtest/assets/icon-128.png"/>
   <SupportUrl DefaultValue="https://joeasahi.github.io/slidevtest/"/>
   <AppDomains>
-    <AppDomain>https://joeasahi.github.io/slidevtest/</AppDomain>
+    <AppDomain>https://joeasahi.github.io/slidevtest</AppDomain>
   </AppDomains>
   <Hosts>
     <Host Name="Mailbox"/>
@@ -94,7 +94,7 @@
         <bt:Url id="Taskpane.Url" DefaultValue="https://joeasahi.github.io/slidevtest/taskpane.html"/>
       </bt:Urls>
       <bt:ShortStrings>
-        <bt:String id="GroupLabel" DefaultValue="Nippan Add-in"/>
+        <bt:String id="GroupLabel" DefaultValue="Test Add-in"/>
         <bt:String id="TaskpaneButton.Label" DefaultValue="Show Task Pane"/>
         <bt:String id="ActionButton.Label" DefaultValue="Perform an action"/>
       </bt:ShortStrings>
